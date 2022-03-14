@@ -18,9 +18,11 @@ class ShowInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaultSearchTerm = "Breaking Bad"
         navigationItem.searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController?.searchBar.text = "Breaking Bad"
-        dataSource?.update(searchText: "Breaking Bad")
+        navigationItem.searchController?.searchBar.text = defaultSearchTerm
+        dataSource?.update(searchText: defaultSearchTerm)
         dataSource?.updateShowImage = updateShowImage(_:)
         searchBarSearchButtonClicked(navigationItem.searchController!.searchBar)
         definesPresentationContext = true
@@ -32,7 +34,6 @@ class ShowInformationViewController: UIViewController {
     private func updateShowImage(_ image: UIImage?) {
         imageView.isHidden = false
         imageView.image = image
-        print(image)
     }
 }
 
@@ -65,11 +66,14 @@ extension ShowInformationViewController {
     private func updatesOnSuccessfulSearch() {
         label.text = ""
         label2.text = dataSource?.showName
-        label3.text = "dfdsf"//dataSource?.daysSincePremier
+        label3.text = dataSource?.daysSincePremier
     }
     
     private func updatesOnFailedSearch() {
         label.text = dataSource?.searchErrorMessage
+        label.center = CGPoint(x: view.frame.width/2, y: view.safeAreaInsets.top+100)
+        view.bringSubviewToFront(label)
+        print(label.frame)
         label2.text = ""
         label3.text = ""
     }

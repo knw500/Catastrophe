@@ -31,9 +31,9 @@ class ShowInformationDataSource {
     private lazy var dateComponentsFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
-        formatter.allowedUnits = [.weekday]
-        formatter.includesApproximationPhrase = true
-        formatter.includesTimeRemainingPhrase = true
+        formatter.allowedUnits = [.day]
+        formatter.includesApproximationPhrase = false
+        formatter.includesTimeRemainingPhrase = false
         return formatter
     }()
     
@@ -42,14 +42,16 @@ class ShowInformationDataSource {
     }
     
     var showName: String {
-        "\(show?.id ?? -1)"
+        show?.showName ?? ""
     }
     
     var daysSincePremier: String {
+        
         guard let premiered = show?.premiered,
               let date = dateFormatter.date(from: premiered),
               let daysSincePremier = dateComponentsFormatter.string(from: date.timeIntervalSinceNow)
         else { return "" }
+        
         return "Premiered \(daysSincePremier) ago."
     }
     
