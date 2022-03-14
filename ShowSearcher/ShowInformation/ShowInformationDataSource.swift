@@ -81,16 +81,18 @@ extension ShowInformationDataSource {
     
     private func requestSingleShow(completion: @escaping (Bool) -> Void) {
         service.requestSingleShow(named: lastSearchedText) { result in
-            switch result {
-            case .success(let show):
-                self.show = show
-                self.requestImage(for: show)
-                completion(true)
-            case .failure(let error):
-                self.show = nil
-                self.error = error
-                self.updateShowImage?(UIImage(systemName: "exclamationmark.icloud.fill"))
-                completion(false)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let show):
+                    self.show = show
+                    self.requestImage(for: show)
+                    completion(true)
+                case .failure(let error):
+                    self.show = nil
+                    self.error = error
+                    self.updateShowImage?(UIImage(systemName: "exclamationmark.icloud.fill"))
+                    completion(false)
+                }
             }
         }
     }
@@ -101,10 +103,14 @@ extension ShowInformationDataSource {
                 switch result {
                 case .success(let data):
                     guard let image = UIImage(data: data) else { return }
-                    self.updateShowImage!(image)
+                    DispatchQueue.main.async {
+                        self.updateShowImage!(image)
+                    }
                 case .failure(let error):
                     self.error = error
-                    self.updateShowImage!(UIImage(systemName: "exclamationmark.icloud.fill"))
+                    DispatchQueue.main.async {
+                        self.updateShowImage?(UIImage(systemName: "exclamationmark.icloud.fill"))
+                    }
                 }
             }
         }

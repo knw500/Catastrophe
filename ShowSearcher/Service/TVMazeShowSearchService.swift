@@ -46,10 +46,10 @@ class TVMazeShowSearchService: ShowSearchService {
     }
     
     func requestImageData(for show: Show, completion: @escaping (Result<Data, TVMazeShowSearchServiceError>) -> Void) {
-        if let _ = URL(string: show.originalImageUrl) {
+        guard let imageURL = URL(string: show.originalImageUrl) else {
             return completion(.failure(TVMazeShowSearchServiceError.invalidUrl))
         }
-        CachedRequest.request(url: URL(string: show.originalImageUrl)!) { data, cached in
+        CachedRequest.request(url: imageURL) { data, cached in
             guard let data = data else {
                 return completion(.failure(TVMazeShowSearchServiceError.noData))
             }

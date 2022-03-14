@@ -12,7 +12,7 @@ class ShowInformationViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var label2: UILabel!
     @IBOutlet var label3: UILabel!
-    @IBOutlet var image: UIImageView!
+    @IBOutlet var imageView: UIImageView!
         
     var dataSource: ShowInformationDataSource?
     
@@ -21,6 +21,7 @@ class ShowInformationViewController: UIViewController {
         navigationItem.searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController?.searchBar.text = "Breaking Bad"
         dataSource?.update(searchText: "Breaking Bad")
+        dataSource?.updateShowImage = updateShowImage(_:)
         searchBarSearchButtonClicked(navigationItem.searchController!.searchBar)
         definesPresentationContext = true
         label.text = ""
@@ -29,7 +30,9 @@ class ShowInformationViewController: UIViewController {
     }
     
     private func updateShowImage(_ image: UIImage?) {
-        image.image = image
+        imageView.isHidden = false
+        imageView.image = image
+        print(image)
     }
 }
 
@@ -62,7 +65,7 @@ extension ShowInformationViewController {
     private func updatesOnSuccessfulSearch() {
         label.text = ""
         label2.text = dataSource?.showName
-        label3.text = dataSource?.daysSincePremier
+        label3.text = "dfdsf"//dataSource?.daysSincePremier
     }
     
     private func updatesOnFailedSearch() {

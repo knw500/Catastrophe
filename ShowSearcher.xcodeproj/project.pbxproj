@@ -13,7 +13,7 @@
 		101A52712577D4B100F171D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101A526F2577D4B100F171D4 /* LaunchScreen.storyboard */; };
 		101A527C2577D4B100F171D4 /* ShowDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A527B2577D4B100F171D4 /* ShowDecodableTests.swift */; };
 		101A52AA2577D5D300F171D4 /* ShowInformationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A52A72577D5D300F171D4 /* ShowInformationDataSource.swift */; };
-		101A52AB2577D5D300F171D4 /* Show.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101A52A82577D5D300F171D4 /* Show.storyboard */; };
+		101A52AB2577D5D300F171D4 /* ShowInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101A52A82577D5D300F171D4 /* ShowInformation.storyboard */; };
 		101A52AC2577D5D300F171D4 /* ShowInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A52A92577D5D300F171D4 /* ShowInformationViewController.swift */; };
 		101A52BB2577D5DF00F171D4 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A52B62577D5DF00F171D4 /* Show.swift */; };
 		101A52CD2577D90100F171D4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101A52CC2577D90100F171D4 /* Coordinator.swift */; };
@@ -48,7 +48,7 @@
 		101A527B2577D4B100F171D4 /* ShowDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDecodableTests.swift; sourceTree = "<group>"; };
 		101A527D2577D4B100F171D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101A52A72577D5D300F171D4 /* ShowInformationDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInformationDataSource.swift; sourceTree = "<group>"; };
-		101A52A82577D5D300F171D4 /* Show.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Show.storyboard; sourceTree = "<group>"; };
+		101A52A82577D5D300F171D4 /* ShowInformation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowInformation.storyboard; sourceTree = "<group>"; };
 		101A52A92577D5D300F171D4 /* ShowInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInformationViewController.swift; sourceTree = "<group>"; };
 		101A52B62577D5DF00F171D4 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		101A52CC2577D90100F171D4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		101A52A62577D5D300F171D4 /* ShowInformation */ = {
 			isa = PBXGroup;
 			children = (
-				101A52A82577D5D300F171D4 /* Show.storyboard */,
+				101A52A82577D5D300F171D4 /* ShowInformation.storyboard */,
 				101A52A92577D5D300F171D4 /* ShowInformationViewController.swift */,
 				101A52A72577D5D300F171D4 /* ShowInformationDataSource.swift */,
 				101A52B62577D5DF00F171D4 /* Show.swift */,
@@ -270,7 +270,7 @@
 			files = (
 				101A52712577D4B100F171D4 /* LaunchScreen.storyboard in Resources */,
 				101A526E2577D4B100F171D4 /* Assets.xcassets in Resources */,
-				101A52AB2577D5D300F171D4 /* Show.storyboard in Resources */,
+				101A52AB2577D5D300F171D4 /* ShowInformation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
