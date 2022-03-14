@@ -1,0 +1,18 @@
+The following changes have been made to the original project:
+- Fixed naming of 'image' imageView that creates a build error.
+- Fixed naming of Interface Builder file that is different to reference name.
+- Fixed various UI updates on the background thread that leads to runtime errors in multiple places. Switched to DispatchQueue.main.async.
+- If statement replaced with guard in service image retrieval method, fixing logic flow.
+- ShowInformationViewController 'updateShowImage' method linked with DataSource method.
+- ImageView now unhides after image is loaded.
+- Autolayout constraints have been updated in a workaround.
+- Label displaying errors is repositioned.
+- Correction of code computing number of days since launch.
+- Fixed DataSource computed 'showName' property which was computing the ID
+
+ToDo list:
+- The format of the JSON retrieved from the source appears to be of the wrong format for the 'Show' model. The default Show for Breaking Bad is always loaded.
+- The same error appears regardless of the cause. A better description of errors would be helpful to a user.
+- Layout may not scale appropriately across all devices. 
+- Date formatter gives a negative value for the number of days since the launch of a show. Further investigation is needed to assess why this is the case.
+- An indication that the app is loading data would be nice, especially due to potentially long wait times for downloading images.
